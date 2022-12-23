@@ -71,6 +71,13 @@ class SearchMembers extends Controller
        }
        $loggedUser = auth()->user();
        $user->whereRaw('id NOT IN( select blocked_to from blocked_users where blocked_by = '.$loggedUser->id.' )');
+       // $sql = $user->toSql();
+       //  $bindings = $user->getBindings();
+
+       //  $sql_with_bindings = preg_replace_callback('/\?/', function ($match) use ($sql, &$bindings) {
+       //      return json_encode(array_shift($bindings));
+       //  }, $sql);
+       //  dd($sql_with_bindings);
        $members = $user->paginate(15);
        //dd($members->items());
        $output['members_list'] = (string)view('front.users.ajax_data.user_listing' , ['members' => $members->items()]);

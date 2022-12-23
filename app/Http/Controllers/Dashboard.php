@@ -42,7 +42,7 @@ class Dashboard extends Controller
         $data['contact'] = User::where('id',$contact->wink_by)->first();
         $data['contact_wink'] = DB::table('users')
                 ->join('wink_users','users.id', '=', 'wink_users.wink_to')
-                ->whereRaw('wink_users.wink_by = '.$user->id)->select('users.*')
+                ->whereRaw('wink_users.wink_by = '.$user->id)->whereRaw('users.id NOT IN( select blocked_to from blocked_users where blocked_by = '.$user->id.' )')->select('users.*')
                 ->get();
            
         $data['pins'] = PinUsers::where('pin_to', $user->id)->get()->count();

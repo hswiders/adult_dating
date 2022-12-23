@@ -47,8 +47,8 @@
 						<li><a href="{{  route('blocked-user')  }}"><i class="zmdi zmdi-block-alt"></i> You blocked them</a></li>
 						<li><a href="{{  route('wink-to-user')  }}" class=""><i class="far fa-kiss-wink-heart"></i> You sent kisses to them</a></li>
 						<li><a href="{{  route('pin-to-user')  }}" class=""><i class="fas fa-map-pin"></i> You pinned them</a></li>
-						<li><a href="{{  route('viewed-by-user')  }}" class="comming_soon"><i class="far fa-eye"></i> They viewed your profile</a></li>
-						<li><a href="{{  route('viewed-to-user')  }}" class="comming_soon"><i class="far fa-user-circle"></i> You viewed their profiles</a></li>
+						<li><a href="{{  route('viewed-by-user')  }}" class=""><i class="far fa-eye"></i> They viewed your profile</a></li>
+						<li><a href="{{  route('viewed-to-user')  }}" class=""><i class="far fa-user-circle"></i> You viewed their profiles</a></li>
 						<li><a href="{{  route('wink-by-user')  }}" class=""><i class="far fa-grin-hearts"></i> They sent you kisses</a></li>
 						<li><a href="{{  route('pin-by-user')  }}" class=""><i class="fas fa-thumbtack"></i> They pinned you</a></li>
 						<li><a href="help_center.php" class="comming_soon"><i class="zmdi zmdi-pin-help"></i> Help Center</a></li>
