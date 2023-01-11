@@ -148,4 +148,4 @@
 
 </div>
 
-@endsection('content')
+@endsection

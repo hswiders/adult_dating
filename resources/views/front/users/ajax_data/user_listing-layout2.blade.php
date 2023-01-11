@@ -37,7 +37,7 @@
                     </a>
               </li>
               <li>
-                <a href="javascript:void(0)">
+                <a href="{{route('view-chat')}}?client_id={{ $element->id }}">
                   <i class="far fa-comment-dots" aria-hidden="true"></i>
                 </a>
               </li>

@@ -87,8 +87,8 @@
 	</div>
         <!-- container-fluid -->
 </div>
-@endsection('content')
-
+@endsection
+@section('scripts')
 <script>
    function change_status(id,status)
    {
@@ -123,3 +123,4 @@
 
    }
 </script>
+@endsection

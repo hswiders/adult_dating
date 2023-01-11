@@ -18,7 +18,7 @@
 					<ul class="submenu" style="display:block">
 						<li><a href="{{  route('profile-dashboard')  }}"><i class="zmdi zmdi-view-dashboard"></i> Dashboard</a></li>
 						<li><a href="{{  route('user-profile')  }}"><i class="zmdi zmdi-account"></i> My Profile</a></li>
-						<li><a href="app-chat.php"><i class="zmdi zmdi-comment-more"></i>
+						<li><a href="{{  route('view-chat')  }}"><i class="zmdi zmdi-comment-more"></i>
 						Chats</a></li>						
 						<li><a href="{{  route('blocked-user')  }}"><i class="zmdi zmdi-block-alt"></i> You blocked them</a></li>
 						<li><a href="{{  route('wink-to-user')  }}" class=""><i class="far fa-kiss-wink-heart"></i> You sent kisses to them</a></li>

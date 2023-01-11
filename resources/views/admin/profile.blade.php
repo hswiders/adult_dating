@@ -123,7 +123,8 @@
 	</div>
     <!-- container-fluid -->
 </div><!-- End Page-content -->
-
+@endsection
+@section('scripts')
 
 <script type="text/javascript">
 	function update_password() {
@@ -197,4 +198,4 @@
         return false;
     }
 </script>
-@endsection('content')
+@endsection

@@ -68,7 +68,7 @@
 
 								<div class="text-right">
 
-									<a href="javascript:void()"  onclick="show_add_form()" class="btn btn-success btn-xs float-right">Add</a>
+									<a href="javascript:void(0);" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addModal">Add</a>
 
 								</div>
 
@@ -109,7 +109,8 @@
 											<td>{{ $value->title }}</td>
 
 											<td>
-												<a class="btn btn-warning btn-sm" href="javascript:void(0)"  onclick="show_edit_form({{$value->id}})">Edit</a>
+												<!-- <a class="btn btn-warning btn-sm" href="javascript:void(0)"  onclick="show_edit_form({{$value->id}})">Edit</a> -->
+												 <a href="javascript:;" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#updateModal{{$value->id;}}">Edit</a>
 
 												<a onclick="return confirm('are you want to delete this?')" class="btn btn-danger btn-sm" href="{{ url('admin/delete-nationality?id='.$value->id); }}" >Delete</a>
 											</td>
@@ -121,21 +122,19 @@
 										@php $i++; @endphp 
 
 
-	<div class="modal fade" id="edit_modal{{$value->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	   <div class="modal-dialog" id="modal_data">
-	      <div class="modal-content">
-	         <div class="modal-header">
-	            <h5 class="modal-title" id="modal_title">Edit National Title</h5>
-	            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="e_modal_close({{$value->id}})">
-	            <span aria-hidden="true">&times;</span>
-	            </button>
-	         </div>
+	<div class="modal fade" id="updateModal{{$value->id;}}">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Natinal Title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
 	         <form class="contact-form" id="update_natinality{{$value->id}}" method="post" onsubmit="return update_natinality(event , {{$value->id}});"  enctype="multipart/form-data">
 	            <div class="modal-body">
 	            	<input type="hidden" name="id" value="{{$value->id}}">
 	               @csrf
 	                <div class="row">
-	                    <div class="col-lg-6">
+	                     <div class="mb-3 col-md-12">
 							<label for="emailInput" class="form-label">National</label>
 								<input type="text" name="title" class="form-control" placeholder="Enter national name.."  value="{{$value->title}}" required>
 						</div>
@@ -143,7 +142,6 @@
 
 	            </div>
 	            <div class="modal-footer">
-	               <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="e_modal_close({{$value->id}})">Cancel</button>
 	               <button type="submit" class="btn btn-primary" id="saveBtn{{$value->id}}">Update</button>
 	            </div>
 	         </form>
@@ -180,20 +178,18 @@
 
 </div>
 
-<div class="modal fade" id="add_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	   <div class="modal-dialog" id="modal_data">
-	      <div class="modal-content">
-	         <div class="modal-header">
-	            <h5 class="modal-title" id="modal_title">Add National Title</h5>
-	            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="a_modal_close()">
-	            <span aria-hidden="true">&times;</span>
-	            </button>
-	         </div>
+<div class="modal fade" id="addModal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add National Title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
 	         <form class="contact-form" id="add_natinality" method="post" onsubmit="return add_natinality(event);"  enctype="multipart/form-data">
 	            <div class="modal-body">
 	               @csrf
 	                <div class="row">
-	                    <div class="col-lg-6">
+	                    <div class="mb-3 col-md-12">
 							<label for="emailInput" class="form-label">National</label>
 							<input type="text" name="title" class="form-control" placeholder="Enter national name.."  value="" required>
 						</div>
@@ -201,16 +197,15 @@
 
 	            </div>
 	            <div class="modal-footer">
-	               <button type="button" class="btn btn-secondary" onclick="a_modal_close()" data-dismiss="modal">Cancel</button>
 	               <button type="submit" class="btn btn-primary" id="saveBtn">Add</button>
 	            </div>
 	         </form>
 	      </div>
 	   </div>
 	</div>
+@endsection
 
-
-
+@section('scripts')
 <script type="text/javascript">
 	function show_edit_form(id) 
 {
@@ -308,4 +303,4 @@ function update_natinality(e , id) {
 
 
 </script>
-@endsection('content')
+@endsection

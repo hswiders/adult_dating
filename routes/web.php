@@ -20,6 +20,7 @@ Route::post('api/fetch-cities', 'DropdownController@fetchCity');
 Route::post('read-notification', 'DropdownController@readNoti')->name('read-notification');
    Route::middleware('auth')->group(function() {
         Route::get('user/dashboard','Dashboard@index')->name('user-dashboard');
+        
         Route::get('profile-dashboard','Dashboard@profileDashboard')->name('profile-dashboard');
         Route::get('user/profile','Dashboard@profile')->name('user-profile');
         Route::post('user/profile_upadate','Dashboard@UpdateProfile')->name('user-update-profile');
@@ -46,8 +47,20 @@ Route::post('read-notification', 'DropdownController@readNoti')->name('read-noti
         Route::get('wink-by-user', 'WinkController@WinkedByUserList' )->name('wink-by-user');
         Route::get('viewed-by-user', 'ViewedController@ViewedByUserList' )->name('viewed-by-user');
         Route::get('viewed-to-user', 'ViewedController@ViewedToUserList' )->name('viewed-to-user');
-        
-       
+
+        /*Chat-------------------------------------------*/
+        Route::get('user/chat', 'ChatController@index' )->name('view-chat');
+        Route::post('ajax_chat_between_users', 'ChatController@ajax_chat_between_users' )->name('ajax_chat_between_users');
+        Route::post('ajax_chat_users', 'ChatController@ajax_chat_users' )->name('ajax_chat_users');
+        Route::post('ajax_send_message', 'ChatController@ajax_send_message' )->name('ajax_send_message');
+
+        /* Wallet Module */
+        Route::get('user/wallet-dashboard','WalletController@index')->name('wallet-dashboard');
+        Route::get('user/select-package','WalletController@selectPackage')->name('select-package');
+        Route::post('user/get-packages','WalletController@getPackages')->name('get-packages');
+        Route::post('user/get-payment-method','WalletController@getPaymentMethod')->name('get-payment-method');
+        Route::post('user/confirm-payment','WalletController@confirmPayment')->name('confirm-payment');
+        Route::get('user/price-list','WalletController@price_list')->name('price-list');
     });
 
 });
@@ -100,6 +113,23 @@ Route::post('update-user-profile','Dashboard@update_user_profile')->name('update
         Route::post('/add-blog','BlogController@addblog')->name('add-blog');
         Route::post('/edit-blog','BlogController@editblog')->name('edit-blog');
         Route::get('/delete-blog','BlogController@deleteblog')->name('delete-blog');
+        Route::get('/package-management','PackageManagement@index')->name('package-management');
+        Route::get('/add-package','PackageManagement@Add_package')->name('add-package');
+        Route::Post('/add-packages-data','PackageManagement@Add_packageData')->name('add-packages-data');
+        Route::get('/delete-package','PackageManagement@delete_package')->name('delete-package');
+        Route::Post('/delete-package-list-Item','PackageManagement@delete_packagelist_Item')->name('delete-package-list-Item');
+        //Route::Post('/delete-package-listItem','PackageManagement@delete_package_listItem')->name('delete-package-listItem');
+        Route::get('/edit-package','PackageManagement@edit_package')->name('edit-package');
+        Route::Post('/update-package','PackageManagement@update_package')->name('update-package');
+        Route::get('/subscription','SubscriptionController@Subscription')->name('subscription');
+          
+        Route::get('/happy-hour','HappyController@happy_hour')->name('happy-hour');
+        Route::post('add-happy-hour','HappyController@add_happy_hour')->name('add-happy-hour');
+        Route::post('update-happy-hour','HappyController@update_happy_hour')->name('update-happy-hour');
+        Route::get('/delete-happy-hour','HappyController@delete_happy_hour')->name('delete-happy-hour');
+
+        Route::get('/payment-setting','PaymentSettingController@payment_setting')->name('payment-setting');
+         Route::post('update-paymentSetting','PaymentSettingController@update_paymentSetting')->name('update-paymentSetting');
     });
 });
 

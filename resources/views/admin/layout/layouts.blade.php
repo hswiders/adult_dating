@@ -299,6 +299,15 @@ if ($this->session->has('admin_id')) {
         $('.ckeditor').ckeditor();
     });
 </script>
+<script>
+
+    $(document).ready(function() {
+
+        $('#example23').DataTable();
+
+    });
+
+</script>
 
     <!-- <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=65793fxb90bag05d09k8xtxe28y06z0ee9cc5uedgbtwrdnf"></script>
 
@@ -349,15 +358,7 @@ if ($this->session->has('admin_id')) {
    
   </script>
 
-    <script>
-
-        $(document).ready(function() {
-
-            $('#example23').DataTable();
-
-        });
-
-    </script> -->
+     -->
 
 		
 
@@ -386,6 +387,7 @@ if ($this->session->has('admin_id')) {
 		
 
 		</script> -->
+         @yield('scripts')
 
 </body>
 

@@ -42,8 +42,10 @@
 					<ul class="submenu" style="display:block">
 						<li><a href="{{  route('profile-dashboard')  }}"><i class="zmdi zmdi-view-dashboard"></i> Dashboard</a></li>
 						<li><a href="{{  route('user-profile')  }}"><i class="zmdi zmdi-account"></i> My Profile</a></li>
-						<li><a href="app-chat.php"><i class="zmdi zmdi-comment-more"></i>
-						Chats</a></li>						
+						<li><a href="{{  route('view-chat')  }}"><i class="zmdi zmdi-comment-more"></i>
+						Chats 
+						<span class="label label-danger"> {{ totalUnreadMsg( auth()->user()->id ) }} </span>
+						</a></li>						
 						<li><a href="{{  route('blocked-user')  }}"><i class="zmdi zmdi-block-alt"></i> You blocked them</a></li>
 						<li><a href="{{  route('wink-to-user')  }}" class=""><i class="far fa-kiss-wink-heart"></i> You sent kisses to them</a></li>
 						<li><a href="{{  route('pin-to-user')  }}" class=""><i class="fas fa-map-pin"></i> You pinned them</a></li>
@@ -98,7 +100,7 @@ jQuery(document).ready(function($) {
 	$('.comming_soon').attr('href', 'javascript:;');
 });
         jQuery(document).on('click' , '.comming_soon',function(){
-  alert('comming soon')
+        alert('comming soon')
 })
 </script>
 @if( Session::has('success')) 
@@ -406,6 +408,12 @@ function markAsRead(id , elem , remove='no') {
 	  }
 	});
 }
+</script>
+<script>
+	$(document).on('click','div',function(){
+	$("body").addClass("app_sidebar-menu-collapsed");
+	$(".menu-icon a").addClass("is-active");
+});
 </script>
 
 </body>	 

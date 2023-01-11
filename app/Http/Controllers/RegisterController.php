@@ -55,6 +55,7 @@ class RegisterController extends Controller
             $user->dob_y = $request->dob_y;
             $user->age = date('Y') - $request->dob_y;
             $user->city = $request->city;
+            $user->gender = $request->gender;
             $user->username = $request->username;
             $user->country = $request->country;
             $user->occupation = $request->occupation;

@@ -3020,7 +3020,7 @@ address{
     display:block
 }
 .app_sidebar-menu-collapsed #app_main-menu-wrapper{
-    width:50px
+    width:0px
 }
 .app_sidebar-menu-collapsed #app_topnavbar-wrapper .navbar-form{
     left:0
@@ -3046,7 +3046,7 @@ address{
     display:none
 }
 .app_sidebar-menu-collapsed #logo_wrapper{
-    width:50px;
+    /* width:50px; */
     -webkit-transition:all,250ms;
     -khtml-transition:all,250ms;
     -moz-transition:all,250ms;
@@ -3414,7 +3414,7 @@ address{
     content:""
 }
 .app_sidebar-menu-collapsed #app_wrapper #app_sidebar-left,.app_sidebar-menu-collapsed #app_wrapper #app_topnavbar-wrapper #navbar_header{
-    width:50px
+    width:0px
 }
 .app_sidebar-menu-collapsed #app_wrapper #content_outer_wrapper{
     padding-left:50px
@@ -4101,7 +4101,7 @@ body.boxed-layout .backdrop{
     display:none
 }
 #content_type.boxed-leftnav .content-body .card-body{
-    padding:50px 25px 0;
+    padding: 0px;
     height:calc(100vh - 105px);
     overflow-x:hidden
 }
@@ -5927,7 +5927,7 @@ body.boxed-layout .backdrop{
     background:#EEF5F9;
     border-radius:30px;
     height:40px;
-    padding:5px 25px;
+    padding:12px 40px;
     box-shadow:0 2px 2px 0 rgba(227,236,247,.14),0 3px 1px -2px rgba(227,236,247,.2),0 1px 5px 0 rgba(227,236,247,.12)
 }
 .dropzone{
@@ -15133,7 +15133,17 @@ ul.files li .card.card-file,ul.files li .card.card-folder,ul.folders li .card.ca
 }
 #chat-wrapper .chat-row{
     padding:12px 0;
-    margin:65px 0
+}
+
+section#chat-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.message img {
+    max-width: 200px;
+    height: 150px;
+    object-fit: cover;
+    width: 100%;
 }
 #chat-wrapper .chat-row .bubble{
     max-width:70%;
@@ -17248,7 +17258,8 @@ body#auth_wrapper .icon-locked{
 }
 .card ul{
     margin:0;
-    list-style:none
+    list-style:none;
+    padding: 0px;
 }
 .card .card-heading{
     padding:15px 20px;
@@ -23813,7 +23824,7 @@ select.bs-select-hidden,select.selectpicker{
     object-fit: cover;
 }
 .status-show.online .succuess{
-	background:#40ff8b;
+    background:#40ff8b;
 }
 .card-heading.card-img span {
     font-size: 14px;
@@ -23828,7 +23839,76 @@ select.bs-select-hidden,select.selectpicker{
     color: #fff; 
 }
 .card-heading.card-img span a{ 
-	float:right;
-	color:#fff;
+    float:right;
+    color:#fff;
 }
 
+.message img {
+    max-width: 200px;
+    height: 150px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.video_box {
+    width: 100%;
+}
+
+.video_box video {
+    max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    position: relative;
+}
+
+.play_icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    text-align: center;
+    background: #000000b0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+
+}
+.message:hover .play_icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    text-align: center;
+    background: #000000b0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 1s;
+}
+.play_icon i.fa.fa-play {
+    font-size: 30px;
+    color: #5417a9;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background: #fff;
+    line-height: 50px;
+    text-align: center;
+    padding-left: 5px;
+    transform: rotate(0deg);
+}
+.play_icon:hover i.fa.fa-play {
+    transform: rotate(360deg);
+    transition: all 1s;
+    color: #fff;
+    background: #5417a9;
+}

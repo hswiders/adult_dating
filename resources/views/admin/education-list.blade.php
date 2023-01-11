@@ -209,7 +209,8 @@
 	   </div>
 	</div>
 
-
+@endsection
+@section('scripts')
 
 <script type="text/javascript">
 	function show_edit_form(id) 
@@ -308,4 +309,4 @@ function update_education(e , id) {
 
 
 </script>
-@endsection('content')
+@endsection

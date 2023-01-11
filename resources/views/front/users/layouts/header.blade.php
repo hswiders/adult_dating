@@ -23,6 +23,8 @@
 .blockUI.blockMsg.blockPage , .blockUI.blockOverlay {
     z-index: 9999!important;
 }
+
+
 	</style>
 </head>
 
@@ -38,7 +40,7 @@
 							</li>
 						</ul>
 					</div>
-					<ul class="nav navbar-nav left-menu hidden-lg">
+					<ul class="nav navbar-nav left-menu ">
 						<li class="menu-icon">
 							<a href="javascript:void(0)" role="button" data-toggle-state="app_sidebar-menu-collapsed" data-key="leftSideBar">
 								<i class="mdi mdi-backburger"></i>
@@ -89,11 +91,11 @@
 								@endphp
 									<li>
 									<div class="card">
-										<a href="javascript:void(0)" data-url="{{ $others['redirect_to'] }}" onclick="markAsRead('{{ $element->id }}' , this , 'yes')" class="pull-right dismiss" data-dismiss="close">
+										<a href="javascript:void(0)" data-url="{{ isset($others['redirect_to'])?$others['redirect_to']:'#' }}" onclick="markAsRead('{{ $element->id }}' , this , 'yes')" class="pull-right dismiss" data-dismiss="close">
 											<i class="zmdi zmdi-close"></i>
 										</a>
 										<div class="card-body">
-											<a href="javascript:void(0)" data-url="{{ $others['redirect_to'] }}" onclick="markAsRead('{{ $element->id }}' , this)" style="padding: 0;line-height: 1;">
+											<a href="javascript:void(0)" data-url="{{ isset($others['redirect_to'])?$others['redirect_to']:'#' }}" onclick="markAsRead('{{ $element->id }}' , this)" style="padding: 0;line-height: 1;">
 											<ul class="list-group ">
 												<li class="list-group-item ">
 													<span class="pull-left"><img src="assets/img/profiles/11.jpg" alt="" class="img-circle max-w-40 m-r-10 "></span>
@@ -126,7 +128,7 @@
 						</li>
 
 						<li >
-							<a class="comming_soon" href="dashboard_wallet.php" data>
+							<a class="" href="{{route('wallet-dashboard')}}" data>
 								<i class="fas fa-wallet"></i>
 							</a>
 						</li>
@@ -152,8 +154,13 @@
 				</div> 
 			</nav>
 		</header>
+@if (@$wallet_sidebar)
+@include('front.users.layouts.sidebar_wallet')
+@else
+@include('front.users.layouts.sidebar')
+@endif
+	
 
-	@include('front.users.layouts.sidebar')
 	@yield('content')
 	@include('front.users.layouts.footer')
 	@yield('right_sidebar')

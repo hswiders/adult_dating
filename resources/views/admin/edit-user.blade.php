@@ -231,7 +231,8 @@
 	</div>
     <!-- container-fluid -->
 </div><!-- End Page-content -->
-
+@endsection
+@section('scripts')
 <script type="text/javascript">
     function update_form() {
         $('.alert-danger').remove();
@@ -267,4 +268,4 @@
         return false;
     }
 </script>
-@endsection('content')
+@endsection

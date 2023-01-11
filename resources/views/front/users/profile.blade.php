@@ -133,10 +133,10 @@ label.radio_label input {
     font-size: 20px;
     cursor: pointer;  
 }
-#app_sidebar-left
+/*#app_sidebar-left
 {
 	display: none;
-}
+}*/
 </style>
 <!--  -->
  <!-- id="content_outer_wrapper_profile"  -->

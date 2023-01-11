@@ -39,7 +39,7 @@
 		                </a>
 					</li>
 					<li>
-						<a href="javascript:void(0)" class="comming_soon">
+						<a href="{{route('view-chat')}}?client_id={{ $element->id }}" class="">
 							<i class="far fa-comment-dots" aria-hidden="true"></i>
 						</a>
 					</li>

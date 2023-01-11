@@ -229,7 +229,8 @@
 
 </div>
 
-@endsection('content')
+@endsection
+@section('scripts')
 
 <script type="text/javascript">
     function addBlog() {
@@ -313,3 +314,4 @@ return false;
 }
 
     </script>
+@endsection

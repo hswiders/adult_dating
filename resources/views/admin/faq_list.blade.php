@@ -209,7 +209,8 @@
 
 </div>
 
-@endsection('content')
+@endsection
+@section('scripts')
 
 <script type="text/javascript">
     function addFaq() {
@@ -292,4 +293,6 @@ function edit_faq(el , id) {
 return false;    
 }
 
-    </script>
+</script>
+
+@endsection

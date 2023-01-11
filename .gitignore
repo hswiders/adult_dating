@@ -6,6 +6,9 @@
 /vendor
 .env
 .env.backup
+adult_11_01_23.zip
+Dating.zip
+adult(12-12-2022).zip
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml

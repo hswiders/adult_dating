@@ -104,7 +104,7 @@
 
 					<a class="nav-link menu-link" href="{{ route('admin.occupation') }}">
 
-						<i class="ri-stack-line"></i> <span data-key="t-dashboards">Occupation</span>
+						<i class="ri-briefcase-line"></i> <span data-key="t-dashboards">Occupation</span>
 
 					</a>
 				</li>
@@ -112,7 +112,7 @@
 				<li class="nav-item">
 
 					<a class="nav-link menu-link" href="{{ route('admin.nationality') }}">
-						<i class="ri-stack-line"></i> <span data-key="t-dashboards">Nationality</span>
+						<i class="ri-flag-line"></i> <span data-key="t-dashboards">Nationality</span>
 
 					</a>
 				</li>
@@ -120,7 +120,7 @@
 				<li class="nav-item">
 
 					<a class="nav-link menu-link" href="{{ route('admin.languages') }}">
-						<i class="ri-stack-line"></i> <span data-key="t-dashboards">	Language</span>
+						<i class="ri-home-4-line"></i> <span data-key="t-dashboards">Language</span>
 
 					</a>
 				</li>
@@ -128,7 +128,7 @@
 				<li class="nav-item">
 
 					<a class="nav-link menu-link" href="{{ route('admin.education') }}">
-						<i class="ri-stack-line"></i> <span data-key="t-dashboards">	Education</span>
+						<i class="ri-community-line"></i></i> <span data-key="t-dashboards">Education</span>
 
 					</a>
 				</li>
@@ -151,6 +151,79 @@
 
 					</a>
 				</li>
+
+				<li class="nav-item">
+
+					<a class="nav-link menu-link" href="#sidebarDashboards1" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards1">
+
+						<i class="ri-user-2-line"></i> <span data-key="t-dashboards">Package Management</span>
+
+					</a>
+					<div class="menu-dropdown collapse" id="sidebarDashboards1" style="">
+
+						<ul class="nav nav-sm flex-column">
+
+							<li class="nav-item">
+
+								<a class="nav-link menu-link" href="{{ route('admin.package-management') }}">
+
+									<i class="ri-bank-line"></i> <span data-key="t-dashboards">Package List</span>
+
+								</a>
+
+							</li>
+							<li class="nav-item">
+
+								<a class="nav-link menu-link" href="{{ route('admin.subscription') }}">
+
+									<i class="ri-bank-line"></i> <span data-key="t-dashboards">Subscription</span>
+
+								</a>
+
+							</li>
+						</ul>
+
+					</div>
+				</li>
+				<!-- <li class="nav-item">
+
+					<a class="nav-link menu-link" href="{{ route('admin.package-management') }}">
+
+						<i class="ri-bank-line"></i> <span data-key="t-dashboards">Package Management</span>
+
+					</a>
+					<div class="menu-dropdown collapse" id="sidebarDashboards" style="">
+
+						<ul class="nav nav-sm flex-column">
+
+							<li class="nav-item">
+
+								<a href="#" class="nav-link" data-key="t-analytics">Subscription</a>
+
+							</li>
+
+						</ul>
+
+					</div>
+				</li> -->
+
+				<li class="nav-item">
+
+					<a class="nav-link menu-link" href="{{ route('admin.happy-hour') }}">
+
+						<i class="ri-gift-line"></i> <span data-key="t-dashboards">Happy Hours Management</span>
+
+					</a>
+				</li>
+				<li class="nav-item">
+
+					<a class="nav-link menu-link" href="{{ route('admin.payment-setting') }}">
+
+						<i class="ri-bank-card-2-line"></i> <span data-key="t-dashboards">Payment Setting</span>
+
+					</a>
+				</li>
+
 			</ul>
 
 		</div>

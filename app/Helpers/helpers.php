@@ -18,7 +18,7 @@ use App\Models\EducationModel;
 use App\Models\UserPhotos;
 use App\Models\BlockedUsers;
 use App\Models\Notification;
-
+use App\Models\Chat;
 /**
 
  * Write code on Method
@@ -90,6 +90,16 @@ if (! function_exists('convertYmdToMdy')) {
 
         $block = BlockedUsers::where('blocked_by' , $by)->where('blocked_to' , $to)->first();
         return $block;
+
+    }
+    function totalUnreadMsg($user_id)
+    {
+
+        $where = "(sender= $user_id or receiver=$user_id) and FIND_IN_SET($user_id,read_by)=0";
+        //$new_user['where'] = $where;
+        $unread = Chat::whereRaw($where)->get();
+        $unread = ($unread) ? count($unread) : 0;
+        return $unread;
 
     } 
     function getUserPhotos($id , $type)

@@ -45904,7 +45904,7 @@ var _self = "undefined" != typeof window ? window : "undefined" != typeof Worker
                     if (t = t || window.event, s.isVisible()) switch (t.keyCode) {
                         case 13:
                         case 27:
-                            l.field.blur();
+                            //l.field.blur();
                             break;
                         case 37:
                             t.preventDefault(), s.adjustDate("subtract", 1);

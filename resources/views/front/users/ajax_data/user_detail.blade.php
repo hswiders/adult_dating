@@ -48,7 +48,7 @@
 											
 										</li>
 										<li>
-											<a href="javascript:void(0)" class="btn btn-sm btn-primary">
+											<a href="{{route('view-chat')}}?client_id={{ $member->id }}" class="btn btn-sm btn-primary">
 												<i class="far fa-comment-dots text-white" aria-hidden="true"></i> Message
 											</a>
 										</li>

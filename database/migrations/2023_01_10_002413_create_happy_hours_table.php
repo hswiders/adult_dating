@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('notifications', function (Blueprint $table) {
+        Schema::create('happy_hours', function (Blueprint $table) {
             $table->id();
-            $table->integer('behalf_of');
-            $table->integer('user_id');
-            $table->string('message');
-            $table->integer('is_read');
-            $table->text('other');
+            $table->integer('package');
+            $table->integer('percentage');
+            $table->date('date');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notifications');
+        Schema::dropIfExists('happy_hours');
     }
 };
